@@ -59,7 +59,10 @@ shared-packages ++ [
   # PDF viewer
   zathura
 
-
+  krita
+  variety
+  azpainter
+  blender
   
   helix
   git
