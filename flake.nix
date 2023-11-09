@@ -3,32 +3,10 @@
   description = "Starter Configuration for NixOS and MacOS";
 
   inputs = {
-    nixpkgs.url = "github:dustinlyons/nixpkgs/master";
+   nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
 
-    # My nixpkgs fork includes a feather-font package (https://github.com/dustinlyons/feather-font)
-    #
-    # Change the flake input
-    # - Official repository
-    #   nixpkgs.url = "github:NixOS/nixpkgs/master";
-    # 
-    # Remove this setting and retry builds if they sometimes timeout:
-    # - NixOS configuration
-    #   https://github.com/dustinlyons/nixos-config/blob/8114714c10d61cd5da34df842dd5bac0301f688a/nixos/default.nix#L280
-    #
-    # Replace feather-font with another font:
-    # - Rofi:
-    #   https://github.com/dustinlyons/nixos-config/blob/1290219734b53b26d9c20d13989846788462ff26/nixos/config/rofi/launcher.rasi#L42
-    # 
-    # - Polybar:
-    #   https://github.com/dustinlyons/nixos-config/blob/1290219734b53b26d9c20d13989846788462ff26/nixos/home-manager.nix#L21
-    #   https://github.com/dustinlyons/nixos-config/blob/1290219734b53b26d9c20d13989846788462ff26/nixos/config/rofi/styles.rasi#L49
-    #   https://github.com/dustinlyons/nixos-config/blob/1290219734b53b26d9c20d13989846788462ff26/nixos/config/rofi/powermenu.rasi#L49
-    #   https://github.com/dustinlyons/nixos-config/blob/1290219734b53b26d9c20d13989846788462ff26/nixos/config/rofi/networkmenu.rasi#L49
-    # 
-    # - Fonts:
-    #   https://github.com/dustinlyons/nixos-config/blob/1290219734b53b26d9c20d13989846788462ff26/nixos/default.nix#L286
 
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-23.05";
     darwin = {
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";

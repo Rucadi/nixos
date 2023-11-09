@@ -10,7 +10,7 @@
   boot.loader.systemd-boot.configurationLimit = 42;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_5;
 
   console = {
     earlySetup = true;

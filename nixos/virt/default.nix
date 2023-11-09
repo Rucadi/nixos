@@ -10,9 +10,6 @@ in
     virtualisation.docker.logDriver = "json-file";
 
 
-    programs.virt-manager.enable = true;
-
-
     users.users.${user}.extraGroups = [ "libvirtd" ];
 
     systemd.user.services.scream-ivshmem = {

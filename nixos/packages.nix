@@ -54,7 +54,7 @@ shared-packages ++ [
 
   # Other utilities
   xdotool
-  microsoft-edge
+  brave
 
   # PDF viewer
   zathura
