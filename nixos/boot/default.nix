@@ -11,7 +11,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.kernelPackages = pkgs.linuxPackages_6_5;
-
+  boot.binfmt.emulatedSystems = [ "wasm32-wasi" "wasm64-wasi" "aarch64-linux"  ];
   console = {
     earlySetup = true;
     colors = [
