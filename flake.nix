@@ -4,7 +4,7 @@
 
   inputs = {
    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
-
+    fehpkgs.url = "github:Rucadi/nixpkgs-fehviewer";
 
     home-manager.url = "github:nix-community/home-manager/release-23.05";
     darwin = {
@@ -31,7 +31,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko } @inputs:
+  outputs = { self, darwin, nix-homebrew, homebrew-bundle, homebrew-core, homebrew-cask, home-manager, nixpkgs, disko, fehpkgs } @inputs:
     let
       user = "rucadi";
       linuxSystems = [ "x86_64-linux" "aarch64-linux" ];
