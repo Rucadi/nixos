@@ -60,11 +60,11 @@
     },
     "fehpkgs": {
       "locked": {
-        "lastModified": 1699636457,
-        "narHash": "sha256-qwWjmc7OcTCPhzqoefT4UY9IbVBlZ8zWNwJ4HoF4ldM=",
+        "lastModified": 1699638225,
+        "narHash": "sha256-t8BKJTCNoruiaSw1WB5Vj0qqEZrBppe3PJqPH5g81nk=",
         "owner": "Rucadi",
         "repo": "nixpkgs-fehviewer",
-        "rev": "038a1e8c1b4ad35571da21a4ca72f8804aeefba1",
+        "rev": "c891f404ef4b2da88bc3000d05d68fcf305af446",
         "type": "github"
       },
       "original": {
@@ -145,11 +145,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1699638005,
-        "narHash": "sha256-WB8qapaFa6O7Xj8DS3h/d/CPTA2fB9y5j2Jlgr6+ERo=",
+        "lastModified": 1699638297,
+        "narHash": "sha256-Y2JK+YGZJSFrLC6rU2QtctdbsPkgULTBvbRzJsj5P/U=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "44ec3ec405d847c74c8006e9bef0609f6f299399",
+        "rev": "6304d22f3ba67bad22d5358ea12ca3a4330009de",
         "type": "github"
       },
       "original": {
