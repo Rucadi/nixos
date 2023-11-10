@@ -50,6 +50,11 @@
           '';
         };
       };
+
+
+      fehviewerpkgs = final: prev: {
+        custompkg = fehpkgs.legacyPackages.${prev.system};
+      };
     in
     {
       devShells = forAllSystems devShell;
@@ -77,6 +82,8 @@
           ];
         };
       };
+
+
       nixosConfigurations = nixpkgs.lib.genAttrs linuxSystems (system: nixpkgs.lib.nixosSystem {
         system = system;
         specialArgs = inputs;
@@ -87,6 +94,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.${user} = import ./nixos/home-manager.nix;
           }
+           ({ config, pkgs, ... }: { nixpkgs.overlays = [ fehviewerpkgs ]; })
           ./nixos
         ];
      });

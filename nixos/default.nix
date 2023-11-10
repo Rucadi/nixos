@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, inputs, pkgs, fehpkgs, ... }:
 
 let user = "rucadi";
 in
@@ -82,9 +82,10 @@ in
     isNormalUser = true;
     extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "docker" "tss" ];
     shell = pkgs.bash;
-    packages = with pkgs; [
-      discord
-      tdesktop
+    packages = [
+      pkgs.discord
+      pkgs.tdesktop
+      pkgs.custompkg.fehviewer
     ];
   };
 
