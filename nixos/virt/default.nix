@@ -1,14 +1,13 @@
-{ config, inputs, pkgs, dconf, ... }:
+{ config, inputs, pkgs, dconf, upkgs, ... }:
 
 let user = "rucadi";
 in
 {
-
-
     # Add docker daemon
     virtualisation.docker.enable = true;
     virtualisation.docker.logDriver = "json-file";
-
+    #virtualisation.virtualbox.host.enable = true;
+    #virtualisation.virtualbox.guest.enable = true;
 
     users.users.${user}.extraGroups = [ "libvirtd" ];
 
@@ -35,7 +34,10 @@ in
         virt-viewer
         win-spice
         win-virtio
-    ];
+    ] ++ [
+        #customvirt.virtualbox
+        #customvirt.virtualboxExtpack
+        ];
 
   # Manage the virtualisation services
   virtualisation = {

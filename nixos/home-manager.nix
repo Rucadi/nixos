@@ -65,6 +65,14 @@ in
     };
   };
 
-  programs = shared-programs // {};
+  programs = shared-programs // {
+      emacs = {                              
+                enable = true;
+                extraPackages = epkgs: [
+                  epkgs.nix-mode
+                  epkgs.magit
+                ];
+              };
+  };
 
 }

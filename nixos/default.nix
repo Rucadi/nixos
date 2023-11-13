@@ -1,8 +1,9 @@
-{ config, inputs, pkgs, fehpkgs, ... }:
+{ config, inputs, pkgs, fehpkgs, upkgs, ... }:
 
 let user = "rucadi";
 in
 {
+
   imports = [
     ./hardware-configuration.nix
     ./boot
@@ -26,6 +27,8 @@ in
 
 # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  
      # Nix Configuration
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];    
@@ -80,7 +83,7 @@ in
   # It's me, it's you, it's everyone
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "docker" "tss" ];
+    extraGroups = [ "networkmanager" "input" "wheel" "video" "audio" "docker" "tss" "vboxusers"  ];
     shell = pkgs.bash;
     packages = [
       pkgs.discord
@@ -110,11 +113,14 @@ in
   # My shell
   programs.zsh.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    gitAndTools.gitFull
-    inetutils
-    egl-wayland
+  environment.systemPackages = [
+    pkgs.gitAndTools.gitFull
+    pkgs.inetutils
+    pkgs.egl-wayland
+    pkgs.emacs
+    pkgs.vuze
   ];
+
 
    programs.direnv.enable = true;
   programs.direnv = {

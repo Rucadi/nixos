@@ -11,6 +11,7 @@ in
   
    environment.systemPackages = with pkgs; [
         nordic
+        latte-dock
     ];
 
 }
