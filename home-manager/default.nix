@@ -1,21 +1,5 @@
 {
   imports = [
-    ./databases.nix
-    ./commands.nix
-    ./disko-config.nix
-    ./ephemeral.nix
-    ./e-ink.nix
-    ./fonts.nix
-    ./greetd.nix
-    ./locale.nix
-    ./networking.nix
-    ./niri.nix
-    ./ollama.nix
-    ./persistence.nix
-    ./power.nix
-    ./sound.nix
-    ./transmission.nix
-    ./virtualisation.nix
-    ./xserver.nix
+    ./qs.nix
   ];
 }

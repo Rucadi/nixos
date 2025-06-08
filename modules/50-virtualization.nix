@@ -28,7 +28,6 @@
 
   programs.virt-manager.enable = true;
   programs.nix-ld.enable = true;
-  services.envfs.enable = true;
 
   boot.binfmt.emulatedSystems = [
     "wasm32-wasi"

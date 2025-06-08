@@ -23,11 +23,6 @@
     options = ["subvol=@"];
   };
 
-  fileSystems."/bin" = {
-    device = "/usr/bin";
-    fsType = "none";
-    options = ["bind"];
-  };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/638B-7413";

@@ -4,11 +4,13 @@
   rucadiPkgs,
   eden,
   tkmm,
+  quickshellPkg,
   ...
 }:
 # System packages & tmpfiles rules
 {
   environment.systemPackages = with pkgs; [
+    quickshellPkg
     eden
     tkmm.tkmm
     ryubing

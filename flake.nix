@@ -29,6 +29,7 @@
     nixpkgs,
     flake-utils,
     niri,
+    home-manager,
     ...
   }: let
     system = "x86_64-linux";
@@ -41,6 +42,7 @@
     eden = inputs.eden-flake.defaultPackage.${system};
     hypr = inputs.hyprland.packages.${system}.default;
     quickshellPkg = inputs.quickshell.packages.${system}.default;
+
   in {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
@@ -62,11 +64,10 @@
           })
         ];
         specialArgs = {
-          inherit rucadiPkgs tkmm eden hypr quickshellPkg;
+          inherit rucadiPkgs tkmm eden hypr quickshellPkg inputs;
         };
       };
     };
-
     homeConfigurations = {
       rucadi = inputs.home-manager.lib.homeManagerConfiguration {
         inherit system;

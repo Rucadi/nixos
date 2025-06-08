@@ -32,6 +32,8 @@
     options = ["lv3:ralt_switch"]; # optional: AltGr = Right Alt
   };
 
+  imports = [./home-manager/default.nix];
+
   # git configuration
   programs.git = {
     enable = true;

@@ -17,6 +17,7 @@
     ];
     packages = with pkgs; [kdePackages.kate];
   };
+      nix.settings.trusted-users = [ "root" "rucadi" ];
 
   console.keyMap = "es";
 }
