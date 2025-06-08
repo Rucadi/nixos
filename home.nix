@@ -12,7 +12,6 @@
 
   #install pacakges
   home.packages = with pkgs; [
-    git
     curl
     jq
     material-symbols

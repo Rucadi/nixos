@@ -15,6 +15,7 @@
     ./modules/80-games.nix
     ./modules/90-printer.nix
     ./modules/100-system.nix
+    ./modules/110-niri-desktop.nix
   ];
 
   # Define system state version

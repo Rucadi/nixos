@@ -16,12 +16,19 @@
     };
     eden-flake.url = "github:erurus/eden";
     hyprland.url = "github:hyprwm/Hyprland";
+
+       niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     flake-utils,
+    niri,
     ...
   }: let
     system = "x86_64-linux";
@@ -40,6 +47,8 @@
         inherit system;
         modules = [
           ./configuration.nix
+          niri.nixosModules.niri
+
           inputs.home-manager.nixosModules.home-manager
           ({
             config,
