@@ -15,7 +15,7 @@
       "docker"
       "disk"
     ];
-    packages = with pkgs; [ kdePackages.kate ];
+    packages = with pkgs; [kdePackages.kate];
   };
 
   console.keyMap = "es";

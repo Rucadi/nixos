@@ -20,7 +20,6 @@
     };
   };
 
-
   virtualisation.docker = {
     enable = true;
     daemon.settings.data-root = "/docker_data";
@@ -31,6 +30,9 @@
   programs.nix-ld.enable = true;
   services.envfs.enable = true;
 
-  boot.binfmt.emulatedSystems = [ "wasm32-wasi" "wasm64-wasi" "aarch64-linux"  ];
-
+  boot.binfmt.emulatedSystems = [
+    "wasm32-wasi"
+    "wasm64-wasi"
+    "aarch64-linux"
+  ];
 }

@@ -9,7 +9,7 @@
   boot.loader.systemd-boot.editor = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "intel_iommu=on" ];
+  boot.kernelParams = ["intel_iommu=on"];
   boot.initrd.kernelModules = [
     "kvm-intel"
     "vfio_pci"
@@ -20,7 +20,7 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
     nvidiaSettings = true;
