@@ -8,7 +8,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.editor = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
   boot.kernelParams = ["intel_iommu=on"];
   boot.initrd.kernelModules = [
     "kvm-intel"

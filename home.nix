@@ -6,7 +6,6 @@
   outputs,
   ...
 }:
-# packages install-deps git quickshell curl jq ttf-material-symbols-variable-git ttf-jetbrains-mono-nerd ttf-ibm-plex app2unit-git fd fish python-aubio python-pyaudio python-numpy cava networkmanager bluez-utils ddcutil brightnessctl
 {
   home.stateVersion = "25.05";
 

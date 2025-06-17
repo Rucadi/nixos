@@ -23,7 +23,6 @@
   virtualisation.docker = {
     enable = true;
     daemon.settings.data-root = "/docker_data";
-    storageDriver = "btrfs";
   };
 
   programs.virt-manager.enable = true;

@@ -9,11 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     rucadi-nixpkgs.url = "github:rucadi/nixpkgs/whatsapp";
-    tkmm-flake.url = "github:rucadi/nixpkgs/tkmm";
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+
     eden-flake.url = "github:erurus/eden";
     hyprland.url = "github:hyprwm/Hyprland";
 
@@ -21,6 +17,13 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+        plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
 
   };
 
@@ -38,10 +41,8 @@
       config.allowUnfree = true;
     };
     rucadiPkgs = import inputs.rucadi-nixpkgs {inherit system;};
-    tkmm = import inputs.tkmm-flake {inherit system;};
     eden = inputs.eden-flake.defaultPackage.${system};
     hypr = inputs.hyprland.packages.${system}.default;
-    quickshellPkg = inputs.quickshell.packages.${system}.default;
 
   in {
     nixosConfigurations = {
@@ -60,11 +61,12 @@
           }: {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.sharedModules = [ self.inputs.plasma-manager.homeManagerModules.plasma-manager ];
             home-manager.users.rucadi = ./home.nix;
           })
         ];
         specialArgs = {
-          inherit rucadiPkgs tkmm eden hypr quickshellPkg inputs;
+          inherit rucadiPkgs eden hypr  inputs;
         };
       };
     };
@@ -74,7 +76,7 @@
         pkgs = pkgs;
         modules = [./home.nix];
         specialArgs = {
-          inherit rucadiPkgs tkmm eden hypr quickshellPkg;
+          inherit rucadiPkgs eden hypr ;
         };
       };
     };
@@ -98,12 +100,10 @@
           config.allowUnfree = true;
         };
         rucadiPkgs = import inputs.rucadi-nixpkgs {inherit system;};
-        quickshellPkg = inputs.quickshell.packages.${system}.default;
       in {
         default = pkgs.mkShell {
           buildInputs = [
             rucadiPkgs.whatsapp-electron
-            quickshellPkg
           ];
         };
       }

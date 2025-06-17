@@ -3,18 +3,17 @@
   pkgs,
   rucadiPkgs,
   eden,
-  tkmm,
-  quickshellPkg,
   ...
 }:
 # System packages & tmpfiles rules
 {
   environment.systemPackages = with pkgs; [
-    quickshellPkg
     eden
-    tkmm.tkmm
+    tkmm
+    ukmm
     ryubing
     jhentai
+    cemu
     ollama
     dolphin-emu
     aria2
@@ -47,6 +46,9 @@
     telegram-desktop
     android-studio-full
     android-tools
+    gcc
+    gdb
+    heaptrack
   ];
 
   systemd.tmpfiles.rules = [
